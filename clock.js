@@ -2,9 +2,7 @@ let a;
 let date;
 let time;
 var am_pm = 'AM';
-
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-
 //arrow function
 setInterval(() => {
     a = new Date();
@@ -12,13 +10,14 @@ setInterval(() => {
     let hrs = a.getHours().toString();
     let min = a.getMinutes().toString();
     let sec = a.getSeconds().toString();
-    
     if (hrs > 12)
         am_pm = 'PM';
     else
-        am_pm = 'AM';
-    
-    time = hrs.padStart(2, '0') + ":" + min.padStart(2, '0') + ":" + sec.padStart(2, '0') + " " + am_pm;
+        am_pm = 'AM';   
+    time = hrs.padStart(2, '0') + ":" + 
+        min.padStart(2, '0') + ":" +
+        sec.padStart(2, '0') + " " + 
+        am_pm;
     document.getElementById('time').innerHTML = time + "<br> on " + date;
 },
   1000);
